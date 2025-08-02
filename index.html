@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday, Tanmay!</title>
   <style>
     body {
@@ -30,12 +31,19 @@
       font-style: italic;
       color: #777;
     }
-    audio {
-      margin-top: 30px;
+    #playButton {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #d35400;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <h1>🎉 Happy Birthday, Tanmay! 🎉</h1>
@@ -49,15 +57,32 @@
       Wishing you an amazing day and a future even better than the present.<br>
       Keep chasing those goals — CA legend in the making! 😎
     </p>
-    <div class="footer">
-      — Your friend, Sparsh
-    </div>
-
-    <!-- 🎵 Music Player (plays automatically and shows controls) -->
-    <audio controls autoplay loop>
-      <source src="buddy.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
+    <div class="footer">— Your friend, Sparsh</div>
+    <button id="playButton" onclick="startMusic()">🎵 Tap to Play Music</button>
+    <audio id="bgMusic" src="buddy.mp3" loop></audio>
   </div>
+
+  <script>
+    const audio = document.getElementById("bgMusic");
+    const playButton = document.getElementById("playButton");
+
+    function startMusic() {
+      audio.play();
+      playButton.style.display = 'none';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        playButton.style.display = 'inline-block';
+      } else {
+        // Try autoplay on desktop
+        audio.play().catch(() => {
+          playButton.style.display = 'inline-block';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
