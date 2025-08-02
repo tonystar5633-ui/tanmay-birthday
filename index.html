@@ -59,7 +59,7 @@
     </p>
     <div class="footer">— Your friend, Sparsh</div>
     <button id="playButton" onclick="startMusic()">🎵 Tap to Play Music</button>
-    <audio id="bgMusic" src="buddy.mp3" autoplay loop></audio>
+    <audio id="bgMusic" src="buddy.mp3" autoplay loop muted></audio>
   </div>
 
   <script>
@@ -67,23 +67,22 @@
     const playButton = document.getElementById("playButton");
 
     function startMusic() {
+      audio.muted = false;
       audio.play();
       playButton.style.display = 'none';
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
       if (isMobile) {
         playButton.style.display = 'inline-block';
       } else {
-        // Try autoplay backup
-        const tryPlay = () => {
-          audio.play().catch(() => {
-            playButton.style.display = 'inline-block';
-          });
-        };
-        setTimeout(tryPlay, 500);  // small delay to ensure autoplay request
+        audio.play().then(() => {
+          audio.muted = false;
+        }).catch(() => {
+          playButton.style.display = 'inline-block';
+        });
       }
     });
   </script>
