@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Tanmay!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 1rem;
+      max-width: 600px;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff7e5f;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy 19th Birthday, Tanmay! 🎉</h1>
+  <p>
+    You’re not just my best friend—you’re family. This little gift is just one way to say
+    thank you for always being there. Let’s make this year unforgettable.
+  </p>
+
+  <button onclick="playMusic()">Tap to Play Music 🎵</button>
+
+  <audio id="bgMusic" src="buddy.mp3" preload="auto"></audio>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById("bgMusic");
+      music.play().catch(err => {
+        alert("Autoplay blocked! Please tap again.");
+      });
+    }
+  </script>
+</body>
+</html>
