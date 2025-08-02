@@ -2,89 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday, Tanmay!</title>
+  <title>Happy Birthday Tanmay 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fdf6e3;
-      color: #333;
       margin: 0;
-      padding: 0;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    .container {
-      padding: 50px 20px;
+
+    .img-container {
+      width: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 150, 255, 0.9);
+      animation: pulse 2.5s infinite ease-in-out;
     }
-    h1 {
-      color: #d35400;
-      font-size: 2.5em;
+
+    .img-container img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 20px auto;
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
-    .footer {
-      margin-top: 50px;
-      font-style: italic;
-      color: #777;
+
+    h2, h3 {
+      color: #ffccff;
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      text-shadow: 0 0 8px white;
+      padding: 0 20px;
     }
-    #playButton {
-      display: none;
+
+    h2 {
+      font-size: 22px;
       margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 1rem;
-      background-color: #d35400;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 Happy Birthday, Tanmay! 🎉</h1>
-    <p>
-      Hey Tanmay,<br><br>
-      From pulling all-nighters over CA notes to moments when you cracked a joke just to lighten the mood — you're truly like a brother to me.
-      I’m so proud of all your hard work, dedication, and ambitious spirit. Here’s to a year with more laughter, fewer audit stress nights, and success at every turn!
-    </p>
-    <p>
-      May your 19th year bring you dreams achieved, pizza shared (study-session fuel!), and next‑level accomplishments.<br>
-      Wishing you an amazing day and a future even better than the present.<br>
-      Keep chasing those goals — CA legend in the making! 😎
-    </p>
-    <div class="footer">— Your friend, Sparsh</div>
-    <button id="playButton" onclick="startMusic()">🎵 Tap to Play Music</button>
-    <audio id="bgMusic" src="buddy.mp3" autoplay loop muted></audio>
+  <div class="img-container">
+    <img src="tanmay.jpg" alt="Tanmay">
   </div>
-
-  <script>
-    const audio = document.getElementById("bgMusic");
-    const playButton = document.getElementById("playButton");
-
-    function startMusic() {
-      audio.muted = false;
-      audio.play();
-      playButton.style.display = 'none';
-    }
-
-    window.addEventListener('load', () => {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      if (isMobile) {
-        playButton.style.display = 'inline-block';
-      } else {
-        audio.play().then(() => {
-          audio.muted = false;
-        }).catch(() => {
-          playButton.style.display = 'inline-block';
-        });
-      }
-    });
-  </script>
+  <h2>Happy Birthday Tanmay</h2>
+  <h3>From Sparsh</h3>
 </body>
 </html>
