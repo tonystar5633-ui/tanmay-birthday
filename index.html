@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy Birthday Tanmay 🎉</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Happy Birthday, Tanmay!</title>
   <style>
     body {
-      margin: 0;
-      background-color: black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .img-container {
-      width: 280px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(255, 150, 255, 0.9);
-      animation: pulse 2.5s infinite ease-in-out;
-    }
-
-    .img-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    h1, h2 {
-      font-family: "Comic Sans MS", cursive;
-      color: #ffccff;
+      font-family: Arial, sans-serif;
       text-align: center;
-      text-shadow: 0 0 8px white;
-      margin: 10px 20px 0;
+      background: #fdf6e3;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-
+    .container {
+      padding: 50px 20px;
+    }
     h1 {
-      font-size: 24px;
-      margin-top: 20px;
+      color: #d35400;
+      font-size: 2.5em;
     }
-
-    h2 {
-      font-size: 18px;
-      margin-top: 5px;
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .footer {
+      margin-top: 50px;
+      font-style: italic;
+      color: #777;
+    }
+    audio {
+      margin-top: 30px;
     }
   </style>
 </head>
+
 <body>
-  <div class="img-container">
-    <img src="tanmay.jpg" alt="Tanmay" />
+  <div class="container">
+    <h1>🎉 Happy Birthday, Tanmay! 🎉</h1>
+    <p>
+      Hey Tanmay,<br><br>
+      From pulling all-nighters over CA notes to moments when you cracked a joke just to lighten the mood — you're truly like a brother to me.
+      I’m so proud of all your hard work, dedication, and ambitious spirit. Here’s to a year with more laughter, fewer audit stress nights, and success at every turn!
+    </p>
+    <p>
+      May your 19th year bring you dreams achieved, pizza shared (study-session fuel!), and next‑level accomplishments.<br>
+      Wishing you an amazing day and a future even better than the present.<br>
+      Keep chasing those goals — CA legend in the making! 😎
+    </p>
+    <div class="footer">
+      — Your friend, Sparsh
+    </div>
+
+    <!-- 🎵 Music Player (plays automatically and shows controls) -->
+    <audio controls autoplay loop>
+      <source src="buddy.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
   </div>
-  <h1>Happy Birthday Tanmay</h1>
-  <h2>From Sparsh</h2>
 </body>
 </html>
